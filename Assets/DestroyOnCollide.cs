@@ -52,12 +52,18 @@ public class DestroyOnCollide : MonoBehaviour
 
 
         if (willBounce && !other.gameObject.CompareTag("IgnoreBullet")) {
-            GameObject.Instantiate(spawnOnCollide, transform.position, transform.rotation);
+            if (spawnOnCollide)
+            {
+                GameObject.Instantiate(spawnOnCollide, transform.position, transform.rotation);
+            }
             bouncesLeft --;
         } else {
             if (active && !other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("IgnoreBullet")) {
             GameObject.Destroy(gameObject);
-            GameObject.Instantiate(spawnOnCollide, transform.position, transform.rotation);
+                if (spawnOnCollide)
+                {
+                    GameObject.Instantiate(spawnOnCollide, transform.position, transform.rotation);
+                }
             }
         }
     }

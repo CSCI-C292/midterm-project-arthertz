@@ -131,6 +131,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void Update()
         {
+
             RotateView();
 
             if (CrossPlatformInputManager.GetButtonDown("Jump") && !m_Jump)

@@ -98,7 +98,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 0.8, y: 0.8, z: 0.8}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &4411317406072060325
 ParticleSystem:
@@ -4894,12 +4894,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 150
-  power: 10
+  power: 20
   radius: 0.01
   ownerTag: 
-  initVelocity: 6
+  initVelocity: 8
   body: {fileID: 8868988282620349601}
-  maxPositiveDeflection: 5
 --- !u!54 &8868988282620349601
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4934,4 +4933,4 @@ MonoBehaviour:
   bouncesLeft: 1
   probabilisticBounce: 1
   bounceChance: 0.75
-  velocityThresh: 1
+  velocityThresh: 3

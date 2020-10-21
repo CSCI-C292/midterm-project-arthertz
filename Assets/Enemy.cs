@@ -10,10 +10,8 @@ public class Enemy : MonoBehaviour
 
     [SerializeField]
     bool ignorePlayer = false;
-
     [SerializeField]
     bool neverPatrol = false;
-
     [SerializeField]
     public Weapon currentWeapon;
     [SerializeField]
@@ -22,6 +20,9 @@ public class Enemy : MonoBehaviour
     float lookThreshold;
     [SerializeField]
     float aimTime;
+
+    [SerializeField]
+    Transform _weaponHook;
 
     [SerializeField]
     float waypointThreshold;
@@ -33,8 +34,10 @@ public class Enemy : MonoBehaviour
 
     [SerializeField]
     int currentState = 0;
+
     [SerializeField]
     Transform playerTarget;
+
     [SerializeField]
     NavMeshAgent navAgent;
 
@@ -66,9 +69,22 @@ public class Enemy : MonoBehaviour
         }
     }
 
+
+    public void EquipWeapon (Weapon weapon)
+    {
+        currentWeapon = weapon;
+        weapon.ownerObject = gameObject;
+        weapon.transform.SetParent(_weaponHook);
+        weapon.transform.localPosition = Vector3.zero;
+        weapon.transform.localRotation = Quaternion.identity;
+    }
+
+
     // Update is called once per frame
     void Update()
     {
+        if (_runtime.isPaused) return;
+
         switch (currentState) {
             case 0:
                 //Patrolling for player
@@ -111,10 +127,10 @@ public class Enemy : MonoBehaviour
 
     void ShootAt (Transform target) {
         aimTarget.position = target.position;
-        if (currentWeapon.IsGun ()) {
+        if (currentWeapon.IsGun () && currentWeapon.ReadyToFire()) {
             RaycastHit hit = new RaycastHit();
             Physics.Raycast (transform.position, aimTarget.position, out hit, 999f);
-            currentWeapon.Fire (playerTarget.position);
+            ((Gun) currentWeapon).Fire (playerTarget.position, true);
         }
     }
 

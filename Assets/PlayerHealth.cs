@@ -1,38 +1,51 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField]
     float initHealth = 100f;
-    
-    float health;
+
+    [SerializeField]
+    bool takeDamage = true;
+
+    [SerializeField]
+    float _health;
+
+    [SerializeField]
+    RuntimeData _runtime;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        health = initHealth;
+        _health = initHealth;
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void OnHit (float damage) {
+        _health -= damage;
+    }
+
+    void Update ()
     {
-        
-    }
-
-
-    void OnTriggerEnter(Collider other) {
-        if (other.gameObject.GetComponent<Projectile> () is Projectile projectile) {
-            if (projectile.OwnerIs("Enemy")) {
-                takeDamage (projectile.GetDamage ());
-            }
+        if (!_runtime.isPaused && _health < 0)
+        {
+            StartCoroutine(GameOver());
         }
     }
 
+    IEnumerator GameOver ()
+    {
+        _runtime.gameOverMenu = true;
 
-    void takeDamage (float damage) {
-        health -= damage;
+        while (_runtime.gameOverMenu)
+        {
+            yield return new WaitForEndOfFrame();
+        }
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

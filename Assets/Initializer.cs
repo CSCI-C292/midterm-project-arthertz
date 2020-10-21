@@ -10,6 +10,15 @@ public class Initializer : MonoBehaviour
 
 
     private void Start() {
+
+        _initData.isPaused = false;
+
+        _initData.levelPlaying = true;
+
+        _initData.gameOverMenu = false;
+
+        _initData.SetEnemyTarget(null);
+
         RuntimeData runtime = _instanceRuntimeData ? new RuntimeData (_initData) : _initData;
 
         GameEvents.InvokeNewRuntime (runtime);
