@@ -1,18 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [CreateAssetMenu(menuName = "New RuntimeData")]
 
 public class RuntimeData : ScriptableObject
 {
 
+    public Bool gameOverActive;
 
-    public bool levelPlaying = false;
+    public Bool pauseMenuActive;
 
-    public bool isPaused = false;
-
-    public bool gameOverMenu = false;
+    public Bool debugMenuActive;
 
     private RuntimeData ancestor;
 
@@ -32,6 +32,16 @@ public class RuntimeData : ScriptableObject
 
     }
 
+    public void StopApplication()
+    {
+        Application.Quit();
+    }
+
+    public void ReloadLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
     public Enemy GetEnemyTarget()
     {
         return enemyTarget;
@@ -44,6 +54,18 @@ public class RuntimeData : ScriptableObject
 
     public void CloseGameOverMenu()
     {
-        gameOverMenu = false;
+        pauseMenuActive.member = true;
+        gameOverActive.member = false;
+    }
+
+    public void ClosePauseMenu ()
+    {
+        pauseMenuActive.member = false;
+    }
+
+    public bool LevelPlaying ()
+    {
+        //The level is playing if it is not paused and the game is not over
+        return (pauseMenuActive.eval() || gameOverActive.eval()) == false;
     }
 }

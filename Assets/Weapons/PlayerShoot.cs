@@ -111,14 +111,14 @@ public class PlayerShoot : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetMouseButtonDown(0) && !_runtime.isPaused) {
+        if (Input.GetMouseButtonDown(0) && !_runtime.pauseMenuActive.member) {
 
             slowScript.SpeedUp(releaseSpeedupTime);
 
             currentWeapon.Fire(CalculateFireTarget());
         }
 
-        if (Input.GetMouseButtonDown(1) && !_runtime.isPaused) {
+        if (Input.GetMouseButtonDown(1) && !_runtime.pauseMenuActive.member) {
             slowScript.SpeedUp(releaseSpeedupTime);
 
             //If you're holding a weapon, throw it

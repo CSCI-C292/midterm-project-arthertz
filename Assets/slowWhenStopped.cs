@@ -23,7 +23,7 @@ public class slowWhenStopped : MonoBehaviour
     // Update is called once per frame
     void Update () {
 
-        if (!_runtime.isPaused)
+        if (_runtime.LevelPlaying())
         {
             if (body.velocity.magnitude > threshold || speedUp)
             {

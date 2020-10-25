@@ -31,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Update ()
     {
-        if (!_runtime.isPaused && _health < 0)
+        if (_runtime.LevelPlaying() && _health < 0)
         {
             StartCoroutine(GameOver());
         }
@@ -39,9 +39,9 @@ public class PlayerHealth : MonoBehaviour
 
     IEnumerator GameOver ()
     {
-        _runtime.gameOverMenu = true;
+        _runtime.gameOverActive.member = true;
 
-        while (_runtime.gameOverMenu)
+        while (_runtime.gameOverActive.member)
         {
             yield return new WaitForEndOfFrame();
         }

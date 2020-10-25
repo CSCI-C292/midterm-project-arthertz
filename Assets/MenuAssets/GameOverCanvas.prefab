@@ -247,7 +247,7 @@ GameObject:
   - component: {fileID: 1471489408825310724}
   - component: {fileID: 1471489408825310725}
   - component: {fileID: 1471489408825310726}
-  - component: {fileID: 1471489408825310842}
+  - component: {fileID: 8676563636412524564}
   m_Layer: 5
   m_Name: GameOverCanvas
   m_TagString: Untagged
@@ -337,7 +337,7 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1471489408825310842
+--- !u!114 &8676563636412524564
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -346,10 +346,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1471489408825310727}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eec624957daff814a9cfd44dfdf7d0eb, type: 3}
+  m_Script: {fileID: 11500000, guid: 44ac5cb1fa89b9249b727eccfdd72a35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _runtime: {fileID: 11400000, guid: ad60e920aae436045be553ab2661e3d9, type: 2}
+  _menuActive: {fileID: 11400000, guid: 44289cf3d96ad9249ab1c809b614abb1, type: 2}
 --- !u!1 &1471489409727450627
 GameObject:
   m_ObjectHideFlags: 0

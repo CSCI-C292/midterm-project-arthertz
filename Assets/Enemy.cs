@@ -83,7 +83,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (_runtime.isPaused) return;
+        if (_runtime.pauseMenuActive.member) return;
 
         switch (currentState) {
             case 0:

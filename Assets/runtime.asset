@@ -12,4 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac84abe80dc553240bf6718778aae403, type: 3}
   m_Name: runtime
   m_EditorClassIdentifier: 
+  levelPlaying: 1
   isPaused: 1
+  gameOverActive: {fileID: 11400000, guid: 44289cf3d96ad9249ab1c809b614abb1, type: 2}
+  pauseMenuActive: {fileID: 11400000, guid: 6eedb19dcbdc3da4987eb5468669581e, type: 2}
+  debugMenuActive: {fileID: 11400000, guid: 0f2e0670adeeb564abca2b94c53d62c7, type: 2}

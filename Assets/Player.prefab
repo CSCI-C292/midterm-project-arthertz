@@ -70,7 +70,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3293230505239936800}
   - component: {fileID: 3293230505236496482}
-  - component: {fileID: 3293230505243697314}
   - component: {fileID: 3293230505239634693}
   - component: {fileID: 3293230505521560938}
   - component: {fileID: 3293230505521560939}
@@ -79,6 +78,7 @@ GameObject:
   - component: {fileID: 5608245422831164356}
   - component: {fileID: 657830668}
   - component: {fileID: 657830677}
+  - component: {fileID: 2424844609201202858}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -116,21 +116,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 1
   m_Constraints: 112
-  m_CollisionDetection: 2
---- !u!136 &3293230505243697314
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3293230505239634692}
-  m_Material: {fileID: 13400000, guid: c2815a7ab32e42c4bb42f59caacb8ec1, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.56754017
-  m_Height: 1.6
-  m_Direction: 1
-  m_Center: {x: -0.06754018, y: 0, z: -3.8287096e-10}
+  m_CollisionDetection: 3
 --- !u!114 &3293230505239634693
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,7 +296,6 @@ MonoBehaviour:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    CurrentTargetSpeed: 8
   mouseLook:
     XSensitivity: 2
     YSensitivity: 2
@@ -321,12 +306,6 @@ MonoBehaviour:
     smoothTime: 5
     lockCursor: 1
     cursorCanLock: 1
-  advancedSettings:
-    groundCheckDistance: 0.01
-    stickToGroundHelperDistance: 0.5
-    slowDownRate: 20
-    airControl: 0
-    shellOffset: 0
 --- !u!114 &657830677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -340,7 +319,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _pauseKey: 27
-  _runtime: {fileID: 11400000, guid: ad60e920aae436045be553ab2661e3d9, type: 2}
+  isPaused: {fileID: 11400000, guid: 6eedb19dcbdc3da4987eb5468669581e, type: 2}
+  gameOverActive: {fileID: 11400000, guid: 44289cf3d96ad9249ab1c809b614abb1, type: 2}
+--- !u!136 &2424844609201202858
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3293230505239634692}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.3
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3293230505239634694
 GameObject:
   m_ObjectHideFlags: 0

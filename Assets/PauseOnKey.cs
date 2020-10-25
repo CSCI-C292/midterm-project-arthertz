@@ -9,7 +9,10 @@ public class PauseOnKey : MonoBehaviour
     KeyCode _pauseKey;
 
     [SerializeField]
-    RuntimeData _runtime;
+    Bool isPaused;
+
+    [SerializeField]
+    Bool gameOverActive;
 
     float oldTimeScale;
     float oldFixedDeltaTime;
@@ -23,16 +26,16 @@ public class PauseOnKey : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(_pauseKey) && _runtime.isPaused == false || _runtime.gameOverMenu && _runtime.isPaused == false)
+        if (Input.GetKeyDown(_pauseKey) && isPaused.member == false || gameOverActive.member && isPaused.member == false)
         {
-            _runtime.isPaused = true;
+            if (!gameOverActive.member) isPaused.member = true;
             oldTimeScale = Time.timeScale;
             Time.timeScale = 0;
             oldFixedDeltaTime = Time.fixedDeltaTime;
             Time.fixedDeltaTime = 0;
-        } else if (Input.GetKeyDown(_pauseKey) && _runtime.isPaused && !_runtime.gameOverMenu)
+        } else if (Input.GetKeyDown(_pauseKey) && isPaused.member && !gameOverActive.member)
         {
-            _runtime.isPaused = false;
+            isPaused.member = false;
             Time.timeScale = oldTimeScale;
             Time.fixedDeltaTime = oldFixedDeltaTime;
         }

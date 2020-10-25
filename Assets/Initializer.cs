@@ -11,11 +11,11 @@ public class Initializer : MonoBehaviour
 
     private void Start() {
 
-        _initData.isPaused = false;
+        _initData.gameOverActive.member = false;
 
-        _initData.levelPlaying = true;
+        _initData.pauseMenuActive.member = false;
 
-        _initData.gameOverMenu = false;
+        _initData.debugMenuActive.member = false;
 
         _initData.SetEnemyTarget(null);
 

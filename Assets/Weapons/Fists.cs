@@ -48,6 +48,6 @@ public class Fists : Weapon
 
     public override bool ReadyToFire()
     {
-        return canFire && _runtime.isPaused;
+        return canFire && _runtime.pauseMenuActive.member;
     }
 }
