@@ -78,7 +78,7 @@ MonoBehaviour:
   fireRate: 0.8
   ownerObject: {fileID: 0}
   ammoInClip: 5
-  maxBulletDeflection: 3
+  maxBulletDeflection: 0.1
   projectileObject: {fileID: 4411317406072060327, guid: aebf60c1bac88e342936bc7784df2d6f, type: 3}
   bulletSpawn: {fileID: 8009799489005047789}
   muzzleEnd: {fileID: 8009799489005047789}

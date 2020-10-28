@@ -34,6 +34,8 @@ public static class GameEvents
 
     public static event EventHandler NewRuntime;
 
+    public static event EventHandler PlayerMessage;
+
     public static void InvokePickupItem (GameObject taker, GameObject item) {
         PickupItem (null, new PairOfObjects(taker, item));
     }

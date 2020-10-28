@@ -69,6 +69,12 @@ public class Enemy : MonoBehaviour
         }
     }
 
+    public void Initialize (Transform playerTarget, List<Transform> waypoints, RuntimeData runtime)
+    {
+        this.playerTarget = playerTarget;
+        this.waypoints = waypoints;
+        this._runtime = runtime;
+    }
 
     public void EquipWeapon (Weapon weapon)
     {
@@ -104,9 +110,6 @@ public class Enemy : MonoBehaviour
                 if (!CanSee(playerTarget) && !neverPatrol) {
                     currentState = 0;
                 }
-                break;
-            default:
-                print("Out of behavior scope!");
                 break;
         }
     }

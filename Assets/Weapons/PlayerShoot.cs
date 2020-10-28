@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Runtime.InteropServices;
 
 public class PlayerShoot : MonoBehaviour
 {
@@ -63,8 +64,8 @@ public class PlayerShoot : MonoBehaviour
     }
 
     void ThrowWeapon () {
-        if (currentWeapon is Gun gun) {
-        Rigidbody throwObject = GameObject.Instantiate(gun.dropObject, throwHook.position, throwHook.rotation).GetComponent<Rigidbody>();
+        if (currentWeapon is Throwable throwable) {
+        Rigidbody throwObject = GameObject.Instantiate(throwable.dropObject, throwHook.position, throwHook.rotation).GetComponent<Rigidbody>();
         throwObject.GetComponent<Projectile>().SetProjectileOwner(tag);
         throwObject.AddForce(throwForce * (CalculateFireTarget() - aimCamera.position).normalized, ForceMode.Impulse);
         GameObject.Destroy(currentWeapon.gameObject);
@@ -122,7 +123,7 @@ public class PlayerShoot : MonoBehaviour
             slowScript.SpeedUp(releaseSpeedupTime);
 
             //If you're holding a weapon, throw it
-            if (!currentWeapon.Equals(fists)) {
+            if (currentWeapon is Throwable) {
                 ThrowWeapon();
             }
         }

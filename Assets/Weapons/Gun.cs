@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun : Weapon
+public class Gun : Throwable
 {
 
     protected int shotsLeft;
@@ -23,8 +23,6 @@ public class Gun : Weapon
 
     [SerializeField]
     Transform muzzleEnd; 
-
-    public GameObject dropObject;
 
     public void Start () {
         shotsLeft = ammoInClip;
@@ -56,7 +54,6 @@ public class Gun : Weapon
     public override bool IsGun () {
         return true;
     }
-
 
     public override bool ReadyToFire()
     {
