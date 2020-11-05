@@ -106,7 +106,7 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
+    agentRadius: 0.3
     agentHeight: 2
     agentSlope: 45
     agentClimb: 0.4
@@ -114,7 +114,7 @@ NavMeshSettings:
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.1
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: c36c685076e74fe4bb6c15391e5e5c38, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: aed4d2e0c8966804286662efd24c32eb, type: 2}
 --- !u!1 &37903
 GameObject:
   m_ObjectHideFlags: 0
@@ -2615,7 +2615,7 @@ MonoBehaviour:
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1280, y: 720}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -2631,9 +2631,9 @@ Canvas:
   m_GameObject: {fileID: 475825147}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 1900108868}
-  m_PlaneDistance: 100
+  m_PlaneDistance: 1
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
@@ -11174,29 +11174,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 652180151315340884, guid: b6cf242fae544214db8e7655cf897f8a, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 1232549795586713153, guid: b6cf242fae544214db8e7655cf897f8a, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 2459768269867024784, guid: b6cf242fae544214db8e7655cf897f8a, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 2459768269871780651, guid: b6cf242fae544214db8e7655cf897f8a, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
+    - target: {fileID: 2459768269919517873, guid: b6cf242fae544214db8e7655cf897f8a, type: 3}
+      propertyPath: m_MatchWidthOrHeight
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2459768269919517875, guid: b6cf242fae544214db8e7655cf897f8a, type: 3}
       propertyPath: m_Name
       value: PauseCanvas
-      objectReference: {fileID: 0}
-    - target: {fileID: 2459768269919517875, guid: b6cf242fae544214db8e7655cf897f8a, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2459768269919517903, guid: b6cf242fae544214db8e7655cf897f8a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11282,21 +11266,21 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2459768270376958217, guid: b6cf242fae544214db8e7655cf897f8a, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
+    - target: {fileID: 2459768271089536181, guid: b6cf242fae544214db8e7655cf897f8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 2459768271089536183, guid: b6cf242fae544214db8e7655cf897f8a, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
+    - target: {fileID: 2459768271089536181, guid: b6cf242fae544214db8e7655cf897f8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: RuntimeData, Assembly-CSharp
       objectReference: {fileID: 0}
-    - target: {fileID: 4710406684241626847, guid: b6cf242fae544214db8e7655cf897f8a, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
+    - target: {fileID: 2459768271089536181, guid: b6cf242fae544214db8e7655cf897f8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6817882562272209182, guid: b6cf242fae544214db8e7655cf897f8a, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
+    - target: {fileID: 2459768271089536181, guid: b6cf242fae544214db8e7655cf897f8a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6cf242fae544214db8e7655cf897f8a, type: 3}
@@ -11559,26 +11543,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2967886035368911246, guid: 16c6b67f71f41bb409c60f6837274dec, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.7598467
-      objectReference: {fileID: 0}
-    - target: {fileID: 2967886035368911246, guid: 16c6b67f71f41bb409c60f6837274dec, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.1706222
-      objectReference: {fileID: 0}
     - target: {fileID: 3277220103011979276, guid: 16c6b67f71f41bb409c60f6837274dec, type: 3}
       propertyPath: m_Name
       value: Chair (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 6100026974010782103, guid: 16c6b67f71f41bb409c60f6837274dec, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b01bf58a1c1aab546b25e88e4a187188, type: 2}
-    - target: {fileID: 6100026974164272295, guid: 16c6b67f71f41bb409c60f6837274dec, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: b01bf58a1c1aab546b25e88e4a187188, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 16c6b67f71f41bb409c60f6837274dec, type: 3}
 --- !u!4 &2038329729 stripped
@@ -12839,10 +12807,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2030631825391785276, guid: 4e6fffdc11e896947b9f567b88d05a18, type: 3}
-      propertyPath: _activeCampaign
-      value: 
-      objectReference: {fileID: 11400000, guid: 06cd3d917a78e7f4c9277b6d57e5feb5, type: 2}
     - target: {fileID: 2030631825391785277, guid: 4e6fffdc11e896947b9f567b88d05a18, type: 3}
       propertyPath: m_Name
       value: Game State Manager

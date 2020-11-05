@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Unity WebGL Player | ExtraSpicy</title>
+  </head>
+  <body style="text-align: center">
+    <canvas id="unity-canvas" style="width: 1920px; height: 1080px; background: #231F20"></canvas>
+    <script src="Build/ExtraSpicy.loader.js"></script>
+    <script>
+      createUnityInstance(document.querySelector("#unity-canvas"), {
+        dataUrl: "Build/ExtraSpicy.data.gz",
+        frameworkUrl: "Build/ExtraSpicy.framework.js.gz",
+        codeUrl: "Build/ExtraSpicy.wasm.gz",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "DefaultCompany",
+        productName: "ExtraSpicy",
+        productVersion: "1.0.2135.4261",
+      });
+    </script>
+  </body>
+</html>

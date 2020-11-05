@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Corridor.unity
     guid: 8c38001658ab36549bd2d48b91d1d953
+  - enabled: 1
+    path: Assets/Scenes/DemoFinished.unity
+    guid: 27b901ba093e6be4f89e7f6de07dd132
   m_configObjects: {}

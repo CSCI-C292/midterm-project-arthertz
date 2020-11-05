@@ -38,6 +38,7 @@ public class PauseOnKey : MonoBehaviour
             isPaused.member = false;
             Time.timeScale = oldTimeScale;
             Time.fixedDeltaTime = oldFixedDeltaTime;
+            Cursor.lockState = CursorLockMode.Locked;
         }
     }
 }

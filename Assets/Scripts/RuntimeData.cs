@@ -63,6 +63,7 @@ public class RuntimeData : ScriptableObject
     public void ClosePauseMenu ()
     {
         pauseMenuActive.member = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     public bool LevelPlaying ()
