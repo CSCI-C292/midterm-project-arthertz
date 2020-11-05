@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initHealth: 1000
-  takeDamage: 0
+  takeDamage: 1
   _health: 0
   _runtime: {fileID: 11400000, guid: ad60e920aae436045be553ab2661e3d9, type: 2}
 --- !u!114 &3293230505521560939
