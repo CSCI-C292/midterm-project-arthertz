@@ -146,7 +146,7 @@ MonoBehaviour:
   currentWeapon: {fileID: 0}
   aimTarget: {fileID: 3432258912637066171}
   lookThreshold: 0.4
-  aimTime: 5
+  aimTime: 8
   _weaponHook: {fileID: 2514973658676962236}
   waypointThreshold: 3
   waypoints:

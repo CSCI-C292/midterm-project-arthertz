@@ -8,7 +8,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
     [RequireComponent(typeof (CapsuleCollider))]
     public class RigidbodyFirstPersonController : MonoBehaviour
     {
-
         [Serializable]
         public class MovementSettings
         {
@@ -27,9 +26,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             public void UpdateDesiredTargetSpeed(Vector2 input)
             {
-	            if (input == Vector2.zero) {
-                    CurrentTargetSpeed = 0;
-                }
+	            if (input == Vector2.zero) return;
 				if (input.x > 0 || input.x < 0)
 				{
 					//strafe
@@ -131,7 +128,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void Update()
         {
-
             RotateView();
 
             if (CrossPlatformInputManager.GetButtonDown("Jump") && !m_Jump)
@@ -149,8 +145,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if ((Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon) && (advancedSettings.airControl || m_IsGrounded))
             {
                 // always move along the camera forward as it is the direction that it being aimed at
-                // Modified by Arthur Hertz to be isotropic wiht respect to timeScale
-                Vector3 desiredMove = (cam.transform.forward*input.y + cam.transform.right*input.x)/Time.timeScale;
+                Vector3 desiredMove = cam.transform.forward*input.y + cam.transform.right*input.x;
                 desiredMove = Vector3.ProjectOnPlane(desiredMove, m_GroundContactNormal).normalized;
 
                 desiredMove.x = desiredMove.x*movementSettings.CurrentTargetSpeed;

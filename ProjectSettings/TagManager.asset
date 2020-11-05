@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - DestroyBullet
   - IgnoreBullet
+  - Spawner
+  - Game Manager
   layers:
   - Default
   - TransparentFX
@@ -43,4 +45,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Player
+    uniqueID: 3121828263
     locked: 0
